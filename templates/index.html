@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wine Quality Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #343a40;
+            color: #fff;
+        }
+        .form-control {
+            background-color: #495057;
+            border-color: #495057;
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+        }
+        /* Wine Glass Animation */
+        .wine-glass {
+            position: relative;
+            height: 50px;
+            width: 20px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px 10px 0 0;
+            animation: fill 2s ease-in-out infinite;
+        }
+        .wine-glass::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: -5px;
+            height: 20px;
+            width: 30px;
+            border: 10px solid #fff;
+            border-color: #fff transparent transparent transparent;
+            border-radius: 50%;
+        }
+        @keyframes fill {
+            0% { background: #fff; }
+            50% { background: #b30000; }
+            100% { background: #fff; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Wine Quality Prediction</h1>
+        <!-- Wine Glass Animation -->
+        <div class="wine-glass"></div>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="fixed_acidity">Fixed Acidity</label>
+                <input type="number" class="form-control" name="fixed_acidity" id="fixed_acidity" required>
+            </div>
+            <div class="form-group">
+                <label for="volatile_acidity">Volatile Acidity</label>
+                <input type="number" class="form-control" name="volatile_acidity" id="volatile_acidity" required>
+            </div>
+            <div class="form-group">
+                <label for="citric_acid">Citric Acid</label>
+                <input type="number" class="form-control" name="citric_acid" id="citric_acid" required>
+            </div>
+            <div class="form-group">
+                <label for="residual_sugar">Residual Sugar</label>
+                <input type="number" class="form-control" name="residual_sugar" id="residual_sugar" required>
+            </div>
+            <div class="form-group">
+                <label for="chlorides">Chlorides</label>
+                <input type="number" class="form-control" name="chlorides" id="chlorides" required>
+            </div>
+            <div class="form-group">
+                <label for="free_sulfur_dioxide">Free Sulfur Dioxide</label>
+                <input type="number" class="form-control" name="free_sulfur_dioxide" id="free_sulfur_dioxide" required>
+            </div>
+            <div class="form-group">
+                <label for="total_sulfur_dioxide">Total Sulfur Dioxide</label>
+                <input type="number" class="form-control" name="total_sulfur_dioxide" id="total_sulfur_dioxide" required>
+            </div>
+            <div class="form-group">
+                <label for="density">Density</label>
+                <input type="number" class="form-control" name="density" id="density" required>
+            </div>
+            <div class="form-group">
+                <label for="pH">pH</label>
+                <input type="number" class="form-control" name="pH" id="pH" required>
+            </div>
+            <div class="form-group">
+                <label for="sulphates">Sulphates</label>
+                <input type="number" class="form-control" name="sulphates" id="sulphates" required>
+            </div>
+            <div class="form-group">
+                <label for="alcohol">Alcohol</label>
+                <input type="number" class="form-control" name="alcohol" id="alcohol" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
